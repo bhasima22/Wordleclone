@@ -1,0 +1,271 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121213;
+  color: white;
+}
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* =========================
+   GAME BOARD
+========================= */
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* =========================
+   TILES
+========================= */
+
+.tile {
+  width: 58px;
+  height: 58px;
+
+  border: 2px solid #3a3a3c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Correct letter */
+.tile.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+  color: white;
+}
+
+/* Correct letter, wrong position */
+.tile.present {
+  background-color: #c9b458;
+  border-color: #c9b458;
+  color: white;
+}
+
+/* Letter doesn't exist */
+.tile.absent {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  color: white;
+}
+
+/* =========================
+   VIRTUAL KEYBOARD
+========================= */
+
+.keyboard {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  min-width: 42px;
+  height: 55px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #818384;
+  color: white;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.key:hover {
+  opacity: 0.85;
+}
+
+.wide-key {
+  min-width: 74px;
+}
+
+/* Keyboard feedback colors */
+
+.key.correct {
+  background-color: #6aaa64;
+}
+
+.key.present {
+  background-color: #c9b458;
+}
+
+.key.absent {
+  background-color: #3a3a3c;
+}
+
+/* =========================
+   GAME OVER MODAL
+========================= */
+
+.modal-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+}
+
+.game-over-modal {
+  width: 330px;
+
+  padding: 35px 30px;
+
+  background-color: #ffffff;
+  color: #121213;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-over-modal h2 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  color: #121213;
+  font-weight: bold;
+}
+
+.game-over-modal p {
+  margin: 10px 0;
+
+  font-size: 16px;
+}
+
+.game-over-modal strong {
+  display: block;
+
+  margin: 18px 0;
+
+  font-size: 26px;
+
+  letter-spacing: 4px;
+}
+
+.game-over-modal button {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #6aaa64;
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.game-over-modal button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    padding-top: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .tile {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .key {
+    min-width: 30px;
+    height: 48px;
+    font-size: 11px;
+  }
+
+  .wide-key {
+    min-width: 60px;
+  }
+
+  .keyboard-row {
+    gap: 4px;
+  }
+
+  .game-over-modal {
+    width: 85%;
+    max-width: 330px;
+  }
+}
